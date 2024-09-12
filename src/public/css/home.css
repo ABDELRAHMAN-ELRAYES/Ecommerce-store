@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  box-sizing: border-box;
+  color: var(--con-color);
+  font-family: 'SUSE';
+}
+:root {
+  --bg-color: #efefef;
+  --con-color: #295f98;
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  height: fit-content;
+  background-color: var(--bg-color);
+  display: grid;
+  place-items: center;
+}
+form {
+  width: fit-content;
+  height: fit-content;
+  /* padding: 3rem; */
+  border-radius: 0.5rem;
+  /* border: 1px solid var(--con-color); */
+
+  /* background: rgba(255, 255, 255, 0.13); */
+  border-radius: 16px;
+  /* box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
+  /* backdrop-filter: blur(5.5px); */
+  /* -webkit-backdrop-filter: blur(5.5px); */
+}
+input {
+  padding: 0 1rem;
+  width: 15rem;
+  margin: 0.5rem 0 2rem 0;
+}
+button,
+input {
+  outline: none;
+  height: 3rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+.btn {
+  width: 12rem;
+  margin-bottom: 1rem;
+  background-color: var(--con-color);
+  color: var(--bg-color);
+}
+.input-dev {
+  display: flex;
+  flex-direction: column;
+  /* width: ; */
+}
+.form-footer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.form-title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  display: grid;
+  place-items: center;
+}
+.products-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  height: fit-content;
+  margin-top: 25rem;
+}
+.product-card {
+  width: 20rem;
+  min-height: 43rem;
+  height: fit-content;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  border: 1px solid var(--con-color);
+  position: relative;
+}
+.product-card img {
+  width: 100%;
+}
+.product-card h2,
+.product-card .rate {
+  margin: 1rem 0;
+}
+.btn-rate {
+  display: flex;
+  justify-content: space-between;
+  /* align-items: center; */
+  position: absolute;
+  bottom: 0;
+  width: 90%;
+}
+nav,
+nav .btns {
+  display: flex;
+}
+nav {
+  width: 100%;
+  height: 5rem;
+  background-color: var(--con-color);
+  justify-content: space-evenly;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 500;
+}
+nav h2 {
+  color: var(--bg-color);
+  font-size: 3rem;
+}
+nav button {
+  width: 5rem;
+  border: none;
+  outline: none;
+  color: var(--con-color);
+  background: var(--bg-color);
+  margin-left: 1rem;
+}
+nav a {
+  padding: 1rem;
+  color: var(--bg-color);
+  border: 1px solid var(--bg-color);
+  border-radius: 0.5rem;
+  text-decoration: none;
+}

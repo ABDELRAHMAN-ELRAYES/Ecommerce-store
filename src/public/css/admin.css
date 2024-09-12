@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=SUSE:wght@100..800&display=swap');
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  box-sizing: border-box;
+  /* color: var(--con-color); */
+  color: var(--bg-color);
+  font-family: 'SUSE';
+}
+:root {
+  --bg-color: #efefef;
+  --con-color: #295f98;
+}
+.container {
+  width: 100%;
+  height: 100vh;
+  background-color: var(--bg-color);
+  display: flex;
+  overflow: hidden;
+}
+button {
+  cursor: pointer;
+}
+input {
+  padding: 0 1rem;
+  width: 15rem;
+  margin: 0.5rem 0 2rem 0;
+}
+.btn,
+input {
+  outline: none;
+  height: 3rem;
+  border: none;
+  font-size: 1rem;
+  border-radius: 0.5rem;
+}
+.btn {
+  width: 12rem;
+  margin-bottom: 1rem;
+  background-color: var(--con-color);
+  color: var(--bg-color);
+}
+.input-dev {
+  display: flex;
+  flex-direction: column;
+}
+a {
+  text-decoration: none;
+  color: var(--bg-color);
+}
+nav {
+  width: 20rem;
+  height: 100%;
+  padding: 0.5rem;
+  background-color: var(--con-color);
+}
+nav form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.nav-element {
+  width: 100%;
+  height: 3rem;
+  display: grid;
+  align-items: center;
+  font-size: 1.2rem;
+}
+.logout-btn {
+  color: orangered;
+  font-size: 1.2rem;
+  border: 1px solid orangered;
+  width: 6rem;
+  margin-bottom: 3rem;
+  margin-left: 2rem;
+}
+.container content {
+  width: 100%;
+  height: 100%;
+  display: block;
+  padding: 4rem 2rem;
+}
+label {
+  color: var(--con-color);
+  font-size: 1.2rem;
+}
+.search-user {
+  display: flex;
+}
+.search-user input {
+  width: 60%;
+  margin: 0 1rem;
+}
+.users-container {
+  display: flex;
+  justify-content: center;
+}
+.all-users {
+  height: fit-content;
+}
+.users {
+  height: 25rem;
+  overflow-y: scroll;
+  margin-right: 3rem;
+}
+.users::-webkit-scrollbar {
+  display: none;
+}
+.user {
+  width: 50rem;
+  height: 4rem;
+  background: white;
+  border-radius: 0.5rem;
+  border: 1px solid var(--con-color);
+  margin-bottom: 2rem;
+  color: var(--con-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+.user img {
+  width: 3.5rem;
+  border-radius: 0.5rem;
+}
+.user .btns {
+  display: flex;
+}
+.user button {
+  border: none;
+  border-radius: 50%;
+  width: 3.5rem;
+  height: 3.5rem;
+  background-color: transparent;
+}
+.user button img {
+  height: 2.5rem;
+  width: 2.5rem;
+  margin-left: 1rem;
+}
+.create-user {
+  width: 25rem;
+  height: 100%;
+}
+.sec-title {
+  color: var(--con-color);
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+.create-user-content input {
+  width: 20rem;
+  height: 3.5rem;
+}
+.search-result {
+  width: 100%;
+  height: 3.5rem;
+  margin-bottom: 3rem;
+}
+.search-result .user {
+  width: 61rem;
+  margin-left: 9rem;
+}
+.message-content {
+  width: 100%;
+  padding-left: 9rem;
+}
+.msg {
+  height: 3rem;
+  width: 33rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--con-color);
+}
+.deleted-msg {
+  color: red;
+}
+.updated-msg,
+.created-msg {
+  color: rgb(1, 146, 1);
+}
+.cancel-btn {
+  font-weight: 1000;
+  cursor: pointer;
+}

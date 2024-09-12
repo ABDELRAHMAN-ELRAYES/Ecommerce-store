@@ -1,0 +1,33 @@
+doctype html 
+mixin productCard(image,name,description,rating)
+    form
+        .product-card
+            img(src=`/img/products/${image}`, alt="")
+            h2= name 
+            p=description 
+            .btn-rate
+                p.rate= `Rate : ${rating} / 5`
+                button.btn.add-product-btn(type='submit') Add to cart
+html 
+    header
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title #{title}
+        link(rel='stylesheet' href='/css/home.css')
+
+    body
+        .container
+            nav 
+                h2 Storak
+                - if(`${title}` === 'login')
+                    a(href='/') All Products
+                - else
+                    .btns 
+                        form(action="/login" method='get')
+                            button.login-btn Login
+                        form(action="")
+                            button.signup-btn Signup
+            block content
+                .products-container
+                    each tour in tours 
+                        +productCard(tour.imageCover,tour.name,tour.description,tour.ratingsAverage)

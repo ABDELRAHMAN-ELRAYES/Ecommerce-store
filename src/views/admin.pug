@@ -1,0 +1,68 @@
+doctype html 
+html 
+    header
+        meta(charset='UTF-8')
+        meta(name='viewport' content='width=device-width, initial-scale=1.0')
+        title #{title}
+        link(rel='stylesheet' href='/css/admin.css')
+        script(src="/js/admin.js" defer) 
+
+    body
+        .container
+            nav
+                form(action="/login" method='get') 
+                    .nav-content
+                        .nav-element
+                            p All Employees
+                        .nav-element
+                            p Create New Employee
+                        .nav-element
+                            p Update Employees
+                        .nav-element
+                            p Delete Employee
+                    .nav-footer
+                        button.btn.logout-btn(type='submit') Logout
+            content    
+                block content
+                    form(action='/user' method='post')
+                        .search-user 
+                            label.sec-title(for="search") Search: 
+                            input(type="text" name='search' placeholder='Enter Employee Email')
+                            button.btn.search-btn(type='submit') Search
+                    .search-result 
+                         block user
+                    .users-container
+                        .all-users
+                            h1.sec-title All Employees
+                            .users
+                                each user in users
+                                    .user
+                                        img(src=`/img/users/${user.photo}`)
+                                        p #{user.name}
+                                        p #{user.email}
+                                        input(type="text" value=`${user.email}` style='display:none')
+                                        .btns
+                                            form(action=`/edit-user/${user._id}` method='get')
+                                                button.del-btn(type='submit')
+                                                    img(src="/img/circle.png", alt="")
+                                            form(action=`/user/${user._id}` method='post') 
+                                                button.del-btn(type='submit')
+                                                    img(src="/img/del-icon.png", alt="")
+                        .create-user
+                            h1.sec-title Create Employee
+                            .create-user-content 
+                                form(action='/' method='post')
+                                    .input-dev.name-input
+                                        input(type="name" name="name" placeholder="Enter Employee name")
+                                    .input-dev.email-input
+                                        input(type="email" name="email" placeholder="Enter Employee Email")
+                                    .input-dev.pass-input
+                                        input.pas(type="password" name="password" placeholder="Enter Employee password")
+                                    .input-dev.passConfirm-input
+                                        input.pas(type="password" name="confirmPassword" placeholder="Confirm Employee password")
+                                    button.btn(type='submit') Create Employee
+                    if msg
+                        .message-content 
+                            .msg(class=`${msg.type}`)
+                                p #{msg.content}
+                                p.cancel-btn X

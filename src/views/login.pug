@@ -1,0 +1,16 @@
+extends home
+
+block content
+    form(action='/api/v1/users/login' method='post')
+        h1.form-title Login
+        .input-dev.email-input
+            label(for="email") Email Address
+            input(type="email" name="email" placeholder="Enter Your Email")
+        .input-dev.pass-input
+            label(for="password") Password
+            input.pas(type="password" name="password" placeholder=".......")
+        button.btn.login(type='submit') Login
+        .form-footer
+            span Sign up
+            |
+            span Forgot Password?

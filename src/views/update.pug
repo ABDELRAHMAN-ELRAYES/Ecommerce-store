@@ -1,0 +1,11 @@
+extends home
+
+block content
+    .create-user-content 
+        form(action=`/edit-user/${user._id}` method='post')
+            h1.sec-title(style='margin-bottom:2rem') Update Employee
+            .input-dev.name-input
+                input(type="name" name="name" value=`${user.name}` placeholder="Enter Employee name")
+            .input-dev.email-input
+                input(type="email" name="email" value=`${user.email}` placeholder="Enter Employee Email")
+            button.btn(type='submit') update Employee
